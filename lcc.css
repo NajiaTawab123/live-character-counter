@@ -1,0 +1,134 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f6fc;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Theme toggle switch */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* Switch button style */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #468ef3;
+}
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Container */
+.container {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.726);
+  max-width: 400px;
+  width: 90%;
+  transition: background 0.3s ease;
+}
+
+h2, .description {
+  text-align: center;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+  margin-top: 10px;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+textarea:focus {
+  border-color: #468ef3;
+  outline: none;
+}
+
+/* Character counter */
+.char-info {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+.char-info span {
+  color: #468ef3;
+}
+
+/* === DARK MODE === */
+body.dark {
+  background: #1e1e2f;
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background: #2a2a40;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.863);
+}
+
+body.dark textarea {
+  background: #3a3a55;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .char-info span {
+  color: #90c0ff;
+}
+
